@@ -1,0 +1,189 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: stretch;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  max-height: 100px;
+  flex-shrink: 1;
+  box-shadow: 0 1px 8px -4px black;
+}
+
+header img {
+  width: 7rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  flex-flow: row;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+header nav li {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  text-decoration: none;
+  color: darkgray;
+  display: block;
+  padding: 1rem;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+body > main {
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.column {
+  display: flex;
+  flex-flow: column;
+  row-gap: 1rem;
+}
+
+footer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #c2175b;
+  color: white;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer span, ul {
+  font-size: .8rem;
+}
+
+footer .column img {
+  max-width: 12rem;
+}
+
+.column.disclaimer {
+  row-gap: 0;
+}
+
+.column.sm {
+  width: 100%;
+  align-self: auto;
+  max-width: 80%;
+}
+
+main form {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+  max-width: 768px;
+  padding: 4rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-flow: column;
+}
+
+.field input[type=text] + label {
+  margin-bottom: .5rem;
+}
+
+button.submit {
+  background-color: #c2175b;
+  border: none;
+  padding: .5rem;
+  color: white;
+}
+
+button.reset {
+  margin-top: -.5rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+input[type="text"], select {
+  height: 2rem;
+}
+
+input[type="text"], select, textarea {
+  border: .1rem solid gray;
+  border-radius: .2rem;
+}
+
+input[type="text"]:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #c2175b;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #c2175b;
+}
+
+button.submit:hover {
+  background-color: #720f36;
+}
+
+button.reset:hover {
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
+
+@media all and (min-width: 768px) {
+  .column.sm {
+    justify-content: start;
+    width: auto;
+    min-width: 15%;
+  }
+
+  .column.categories nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .column.institucional nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  header {
+    justify-content: space-around;
+  }
+
+  footer {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+}
