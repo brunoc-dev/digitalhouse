@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<main>
+  <h1>Cursos</h1>
+  <b>Alunos Matriculados: </b> <%= totalAlunos %> 
+
+  <% cursos.forEach(curso => { %>
+
+    <div class="row">
+      <span>
+        <h4><%= curso.nome %></h4>
+        <b>Area: </b><%= curso.area.tipo %>
+      </span>
+
+      <div class="actions">
+        <a href="/cursos/editar/<%= curso.id %>">Editar</a>
+
+        <form action="/cursos/deletar/<%= curso.id %>" method="post">
+          <button type="submit" class="danger">Deletar</a>
+        </form>
+      </div>
+      <div class="row">
+        <table class="turmas">
+          <caption class="turmas-header">Turmas</caption>
+  
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>Semestre</th>
+              <th>Professor</th>
+              <th>Alunos</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <% curso.turmas.forEach(turma => { %>
+            <tr>
+              <td><%= turma.ano_inicio %></td>
+              <td><%= turma.semestre %></td>
+              <td><%= turma.professor.nome %> <%= turma.professor.sobrenome %> </td>
+              <td><%= turma.alunos.length %> </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% }) %>
+</main>
+
+<%- include('partials/footer') %>
