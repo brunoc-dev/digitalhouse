@@ -6,4 +6,9 @@ router.get("/", LivrosController.index);
 router.get("/:id", LivrosController.getOne);
 router.patch("/:id", LivrosController.update);
 
+// CRUD - Padrão REST
+// Read, Create, Update, Delete
+// Métodos http
+// get, post, patch, put, delete?
+
 module.exports = router;

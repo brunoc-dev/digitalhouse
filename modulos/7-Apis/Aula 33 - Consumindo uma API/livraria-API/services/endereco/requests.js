@@ -6,7 +6,7 @@ module.exports = {
     const { data } = await axios({
       ...defaults,
       method: 'get',
-      url: `/cep/v2/${cep}`
+      url: `/cep/v1/${cep}`
     })
 
     return data
